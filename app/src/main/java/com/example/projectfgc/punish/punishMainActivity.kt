@@ -41,7 +41,7 @@ class punishMainActivity : AppCompatActivity() {
 
         charactersList.addAll(initCharacters())
         displayCharacterList.addAll(charactersList)
-        character_list = findViewById(R.id.bpCharactersLayout)
+        character_list = findViewById(R.id.punishCharRecView)
 
         //  Set values for move to punish
         val view = findViewById(R.id.bpConstraintLayout) as ConstraintLayout
@@ -54,8 +54,8 @@ class punishMainActivity : AppCompatActivity() {
             view.stickyMovesOnBlock.text = move.onBlock.toString()
         view.stickyMovesOnHit.text = move.onHit
 
-        bpCharactersLayout.layoutManager = LinearLayoutManager( this@punishMainActivity)
-        bpCharactersLayout.adapter =
+        punishCharRecView.layoutManager = LinearLayoutManager( this@punishMainActivity)
+        punishCharRecView.adapter =
             punishCharacterAdapter(displayCharacterList, move)
     }
 
@@ -95,8 +95,6 @@ class punishMainActivity : AppCompatActivity() {
                     return true
                 }
             })
-            searchView.setQuery("", false)
-            searchView.isIconified
         }
         return super.onCreateOptionsMenu(menu)
     }

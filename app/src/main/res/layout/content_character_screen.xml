@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/characterScreenLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    app:layout_constrainedWidth="false"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".character.characterActivity"
+    tools:showIn="@layout/activity_character_screen">
+
+    <include
+        android:id="@+id/charBanner"
+        layout="@layout/char_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/stickyConstraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stickyConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="@dimen/moves_padding"
+        android:paddingBottom="@dimen/moves_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charBanner">
+
+        <TextView
+            android:id="@+id/stickyOnHit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorRowEven"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="On Hit"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/stickyOnBlock"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/stickyOnBlock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@color/colorRowOdd"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="On Block"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/stickyOnHit"
+            app:layout_constraintStart_toEndOf="@+id/stickySpeed"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/stickySpeed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:autoText="false"
+            android:background="@color/colorRowEven"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Speed"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/stickyOnBlock"
+            app:layout_constraintStart_toEndOf="@+id/stickyMoveName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/stickyMoveName"
+            android:layout_width="@dimen/moves_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@color/colorRowOdd"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Move"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/stickySpeed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/movesRecView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stickyConstraintLayout" />
+
+<!--    <Button-->
+<!--        android:id="@+id/helpButton"-->
+<!--        android:layout_width="75dp"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:layout_marginEnd="18dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:background="@color/colorButton"-->
+<!--        android:text="Help"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/stickyConstraintLayout"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@
     tools:showIn="@layout/activity_bridge_punish">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/bpCharactersLayout"
+        android:id="@+id/punishCharRecView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/punishMoveStatic"
@@ -33,5 +33,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpCharactersLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/punishCharRecView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

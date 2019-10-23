@@ -29,18 +29,20 @@ class MainActivity : AppCompatActivity() {
 
 
         character_list = findViewById(R.id.charRecView) as RecyclerView
-        charRecView.layoutManager = LinearLayoutManager( this@MainActivity)
-        charRecView.adapter = characterAdapter(displayCharacterList)
+        charRecView.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = characterAdapter(displayCharacterList)
+        }
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
 
         menuInflater.inflate(R.menu.search_menu, menu)
-        var searchItem = menu.findItem(R.id.app_bar_search)
+        val searchItem = menu.findItem(R.id.app_bar_search)
 
         if(searchItem != null){
-            var searchView = searchItem.actionView as SearchView
+            val searchView = searchItem.actionView as SearchView
 
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
 
@@ -70,8 +72,6 @@ class MainActivity : AppCompatActivity() {
                     return true
                 }
             })
-            searchView.setQuery("", false)
-            searchView.isIconified
         }
         return super.onCreateOptionsMenu(menu)
     }

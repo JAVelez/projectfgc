@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".character.MainActivty">
+    tools:context=".character.punishCharacterScreen">
 
     <include layout="@layout/app_bar_layout"/>
 
-    <include layout="@layout/content_character_screen" />
+    <include layout="@layout/content_punish_character_screen" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

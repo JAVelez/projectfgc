@@ -1,16 +1,19 @@
 package com.example.projectfgc.punish
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log.d
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projectfgc.R
+import com.example.projectfgc.character.MainActivity
 import com.example.projectfgc.data.characterFields
 import com.example.projectfgc.data.moveFields
 import com.example.projectfgc.move.moveAdapter
-import kotlinx.android.synthetic.main.activity_character_punish_screen.*
-import kotlinx.android.synthetic.main.activity_character_screen.view.*
+import kotlinx.android.synthetic.main.app_bar_layout.*
+import kotlinx.android.synthetic.main.content_punish_character_screen.*
+import kotlinx.android.synthetic.main.content_character_screen.view.*
 import kotlinx.android.synthetic.main.char_layout.view.*
 import kotlinx.android.synthetic.main.moves_layout.view.*
 import java.lang.Math.abs
@@ -20,7 +23,13 @@ class punishCharacterActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_character_punish_screen)
+        setContentView(R.layout.activity_punish_character_screen)
+
+        titleLogo.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
 
         //  Get characterFields of chosen character
         val character = setCharBanner()
