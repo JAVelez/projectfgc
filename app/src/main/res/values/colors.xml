@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196f3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#D81B60</color>
+
+<!--  NEW COLORS  -->
+<!--    <color name="colortextRow"></color>-->
+    <color name="colorRowOdd">#93AFC0</color>
+    <color name="colorRowEven">#8795A2</color>
+
+    <color name="colorBackgroundDark">#000000</color>
+    <color name="colorBackground">#121212</color>
+    <color name="colorBackground1px">#1F1F1F</color>
+    <color name="colorBackground2px">#242424</color>
+    <color name="colorBackground4px">#292929</color>
+    <color name="colorText">#E6FFFFFF</color>
+    <color name="colorButton">#77C294</color>
+    <color name="colorBigText">#77C294</color>
+
+
+
+</resources>

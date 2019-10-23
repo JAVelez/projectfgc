@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/moveConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackground"
+    android:paddingTop="@dimen/moves_padding"
+    android:paddingBottom="@dimen/moves_padding">
+
+    <TextView
+        android:id="@+id/stickyMovesMoveName"
+        android:layout_width="@dimen/moves_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorRowOdd"
+        android:paddingBottom="25dp"
+        android:text="Move"
+        android:textAlignment="center"
+        android:textSize="@dimen/moves_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/stickyMovesSpeed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/stickyMovesMoveNotation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorRowOdd"
+        android:text="Move"
+        android:textAlignment="center"
+        android:textSize="@dimen/moves_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/stickyMovesSpeed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/stickyMovesOnHit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorRowEven"
+        android:gravity="center"
+        android:text="On Hit"
+        android:textAlignment="center"
+        android:textSize="@dimen/moves_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/stickyMovesOnBlock"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stickyMovesOnBlock"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorRowOdd"
+        android:gravity="center"
+        android:text="On Block"
+        android:textAlignment="center"
+        android:textSize="@dimen/moves_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/stickyMovesOnHit"
+        app:layout_constraintStart_toEndOf="@+id/stickyMovesSpeed"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stickyMovesSpeed"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorRowEven"
+        android:gravity="center"
+        android:text="Speed"
+        android:textAlignment="center"
+        android:textSize="@dimen/moves_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/stickyMovesOnBlock"
+        app:layout_constraintStart_toEndOf="@+id/stickyMovesMoveName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

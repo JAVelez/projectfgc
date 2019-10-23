@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/moveDetailConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowOdd"
+            android:text="Name"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/input"
+            app:layout_constraintEnd_toStartOf="@+id/moveName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/input"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowEven"
+            android:text="Input"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/speed"
+            app:layout_constraintEnd_toStartOf="@+id/moveInput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/speed"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowOdd"
+            android:text="Speed"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/hitProp"
+            app:layout_constraintEnd_toStartOf="@+id/moveSpeed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input" />
+
+        <TextView
+            android:id="@+id/hitProp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowEven"
+            android:text="Hit Property"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/onBlock"
+            app:layout_constraintEnd_toStartOf="@+id/moveHitProperty"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/speed" />
+
+        <TextView
+            android:id="@+id/onBlock"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowOdd"
+            android:text="On Block"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/onHit"
+            app:layout_constraintEnd_toStartOf="@+id/moveOnBlock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hitProp" />
+
+        <TextView
+            android:id="@+id/onHit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowEven"
+            android:text="On Hit"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/onCounterHit"
+            app:layout_constraintEnd_toStartOf="@+id/moveOnHit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/onBlock" />
+
+        <TextView
+            android:id="@+id/onCounterHit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowOdd"
+            android:text="On Counter Hit"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/dmg"
+            app:layout_constraintEnd_toStartOf="@+id/moveOnCounterHit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/onHit" />
+
+        <TextView
+            android:id="@+id/dmg"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowEven"
+            android:text="Damage"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/natural"
+            app:layout_constraintEnd_toStartOf="@+id/moveDmg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/onCounterHit" />
+
+        <TextView
+            android:id="@+id/moveName"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowOdd"
+            android:text="Placeholder"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/moveInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/moveInput"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowEven"
+            android:text="Placeholder"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/moveSpeed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/input"
+            app:layout_constraintTop_toBottomOf="@+id/moveName" />
+
+        <TextView
+            android:id="@+id/moveSpeed"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowOdd"
+            android:text="Placeholder"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/moveHitProperty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/speed"
+            app:layout_constraintTop_toBottomOf="@+id/moveInput" />
+
+        <TextView
+            android:id="@+id/moveHitProperty"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowEven"
+            android:text="Placeholder"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/moveOnBlock"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hitProp"
+            app:layout_constraintTop_toBottomOf="@+id/moveSpeed" />
+
+        <TextView
+            android:id="@+id/moveOnBlock"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowOdd"
+            android:text="Placeholder"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/moveOnHit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/onBlock"
+            app:layout_constraintTop_toBottomOf="@+id/moveHitProperty" />
+
+        <TextView
+            android:id="@+id/moveOnHit"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowEven"
+            android:text="Placeholder"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/moveOnCounterHit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/onHit"
+            app:layout_constraintTop_toBottomOf="@+id/moveOnBlock" />
+
+        <TextView
+            android:id="@+id/moveOnCounterHit"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowOdd"
+            android:text="Placeholder"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/moveDmg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/onCounterHit"
+            app:layout_constraintTop_toBottomOf="@+id/moveOnHit" />
+
+        <TextView
+            android:id="@+id/moveDmg"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowEven"
+            android:text="Placeholder"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/moveNatural"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dmg"
+            app:layout_constraintTop_toBottomOf="@+id/moveOnCounterHit" />
+
+        <TextView
+            android:id="@+id/natural"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowOdd"
+            android:text="Natural String"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/moveNatural"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dmg" />
+
+        <TextView
+            android:id="@+id/moveNatural"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowOdd"
+            android:text="Placeholder"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/natural"
+            app:layout_constraintTop_toBottomOf="@+id/moveDmg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
