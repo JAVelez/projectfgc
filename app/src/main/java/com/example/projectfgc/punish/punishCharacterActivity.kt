@@ -75,9 +75,9 @@ class punishCharacterActivity : AppCompatActivity(){
 
         }
 
-        //  Sort punishers by frame data
+        //  Sort punishers by priority
         //  Could be more efficient if we pass a comparator that sorts the list in reverse
-        punishers.sortBy { it.speed }
+        punishers.sortBy { it.priority }
         punishers.reverse()
         punishLayout.movesRecView.apply{
             layoutManager = LinearLayoutManager( this@punishCharacterActivity)
