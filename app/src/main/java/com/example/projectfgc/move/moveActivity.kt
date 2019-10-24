@@ -30,6 +30,7 @@ class moveActivity : AppCompatActivity(){
         moveOnHit.text = move.onHit
         moveOnCounterHit.text = move.onCounterHit
         moveDmg.text = move.dmg.toString()
+        moveTotalDmg.text = move.totalDmg.toString()
         if(!move.natural)
             moveNatural.text = "No"
         else moveNatural.text = "Yes"

@@ -1,9 +1,11 @@
 package com.example.projectfgc.move
 
+import android.app.ProgressDialog.show
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
 import com.example.projectfgc.data.priorityMoveFields
@@ -32,7 +34,7 @@ class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : Recy
             holder.view.stickyMovesOnBlock.text = move.onBlock.toString()
         holder.view.stickyMovesOnHit.text = move.onHit
 
-        //  Touch a move to expand details
+        // Touch a move to expand details
         // Hay un detalle en moves_layout con el height y los constraints en donde se supone que aqui haya hecho dos onClickListeners
 
 
@@ -42,10 +44,15 @@ class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : Recy
             holder.view.context.startActivity(intent)
         }
         if (state == 0) {
+
             holder.view.stickyMovesOnBlock.setOnClickListener {
-                val intent = Intent(holder.view.context, punishMainActivity::class.java)
-                intent.putExtra("move", move)
-                holder.view.context.startActivity(intent)
+                if (move.onBlock <= -10) {
+                    val intent = Intent(holder.view.context, punishMainActivity::class.java)
+                    intent.putExtra("move", move)
+                    holder.view.context.startActivity(intent)
+                } else {
+                    Toast.makeText(holder.view.context, "The move isn't punishable!", Toast.LENGTH_LONG).show()
+                }
             }
         }
     }

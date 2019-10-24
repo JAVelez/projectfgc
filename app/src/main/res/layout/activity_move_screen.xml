@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -121,7 +122,7 @@
             android:text="Damage"
             android:textAlignment="center"
             android:textSize="@dimen/moves_detail_text_size"
-            app:layout_constraintBottom_toTopOf="@+id/natural"
+            app:layout_constraintBottom_toTopOf="@+id/totaldmg"
             app:layout_constraintEnd_toStartOf="@+id/moveDmg"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/onCounterHit" />
@@ -233,7 +234,7 @@
             android:text="Placeholder"
             android:textAlignment="center"
             android:textSize="@dimen/moves_detail_text_size"
-            app:layout_constraintBottom_toTopOf="@+id/moveNatural"
+            app:layout_constraintBottom_toTopOf="@+id/moveTotalDmg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dmg"
             app:layout_constraintTop_toBottomOf="@+id/moveOnCounterHit" />
@@ -250,7 +251,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/moveNatural"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dmg" />
+            app:layout_constraintTop_toBottomOf="@+id/totaldmg" />
 
         <TextView
             android:id="@+id/moveNatural"
@@ -264,6 +265,34 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/natural"
+            app:layout_constraintTop_toBottomOf="@+id/moveTotalDmg" />
+
+        <TextView
+            android:id="@+id/totaldmg"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowEven"
+            android:text="String Damage"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/natural"
+            app:layout_constraintEnd_toStartOf="@+id/moveTotalDmg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dmg" />
+
+        <TextView
+            android:id="@+id/moveTotalDmg"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorRowEven"
+            android:text="Placeholder"
+            android:textAlignment="center"
+            android:textSize="@dimen/moves_detail_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/moveNatural"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/totaldmg"
             app:layout_constraintTop_toBottomOf="@+id/moveDmg" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
