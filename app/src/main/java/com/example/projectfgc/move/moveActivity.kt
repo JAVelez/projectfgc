@@ -3,7 +3,7 @@ package com.example.projectfgc.move
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projectfgc.R
-import com.example.projectfgc.data.moveFields
+import com.example.projectfgc.data.priorityMoveFields
 import kotlinx.android.synthetic.main.activity_move_screen.*
 
 class moveActivity : AppCompatActivity(){
@@ -14,7 +14,7 @@ class moveActivity : AppCompatActivity(){
         setContentView(R.layout.activity_move_screen)
 
         //  Receive move data
-        val move : moveFields = intent.getSerializableExtra("move") as moveFields
+        val move : priorityMoveFields = intent.getSerializableExtra("move") as priorityMoveFields
         moveName.text = move.moveName
         moveInput.text = move.moveInput
 

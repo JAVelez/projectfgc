@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
-import com.example.projectfgc.data.moveFields
+import com.example.projectfgc.data.priorityMoveFields
 import com.example.projectfgc.punish.punishMainActivity
 import kotlinx.android.synthetic.main.moves_layout.view.*
 
-class moveAdapter(val moveList: List<moveFields>, val state: Int) : RecyclerView.Adapter<moveAdapter.ViewHolder>() {
+class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : RecyclerView.Adapter<moveAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutView = LayoutInflater.from(parent.context).inflate(R.layout.moves_layout, parent, false)

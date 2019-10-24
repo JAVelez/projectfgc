@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
 import com.example.projectfgc.data.characterFields
-import com.example.projectfgc.data.moveFields
+import com.example.projectfgc.data.priorityMoveFields
 import com.example.projectfgc.move.moveAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.app_bar_layout.*
@@ -19,8 +19,8 @@ import kotlinx.android.synthetic.main.char_layout.view.*
 
 class characterActivity : AppCompatActivity() {
     lateinit var move_list: RecyclerView
-    val displayMoveList: MutableList<moveFields> = ArrayList()
-    val moveList: MutableList<moveFields> = ArrayList()
+    val displayMoveList: MutableList<priorityMoveFields> = ArrayList()
+    val moveList: MutableList<priorityMoveFields> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

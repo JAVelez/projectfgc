@@ -5,5 +5,5 @@ import java.io.Serializable
 data class characterFields(
     val name: String,
     val imageName: Int,
-    var moveList: MutableList<moveFields>
+    var moveList: MutableList<priorityMoveFields>
 ) : Serializable

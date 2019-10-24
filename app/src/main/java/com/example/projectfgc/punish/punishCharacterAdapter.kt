@@ -10,9 +10,9 @@ import com.example.projectfgc.R
 import com.example.projectfgc.data.characterFields
 import kotlinx.android.synthetic.main.char_layout.view.*
 import com.example.projectfgc.data.createData
-import com.example.projectfgc.data.moveFields
+import com.example.projectfgc.data.priorityMoveFields
 
-class punishCharacterAdapter(val characterList: MutableList<characterFields>, val move: moveFields) : RecyclerView.Adapter<punishCharacterAdapter.ViewHolder>() {
+class punishCharacterAdapter(val characterList: MutableList<characterFields>, val move: priorityMoveFields) : RecyclerView.Adapter<punishCharacterAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutView = LayoutInflater.from(parent.context).inflate(R.layout.card_char_layout, parent, false)
 

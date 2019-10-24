@@ -12,7 +12,7 @@ import com.example.projectfgc.R
 import com.example.projectfgc.character.MainActivity
 import com.example.projectfgc.data.characterFields
 import com.example.projectfgc.data.createData.initCharacters
-import com.example.projectfgc.data.moveFields
+import com.example.projectfgc.data.priorityMoveFields
 import kotlinx.android.synthetic.main.app_bar_layout.*
 import kotlinx.android.synthetic.main.content_bridge_punish.*
 import kotlinx.android.synthetic.main.moves_layout.view.*
@@ -37,7 +37,7 @@ class punishMainActivity : AppCompatActivity() {
 
 
         //  Get characterFields of chosen character
-        val move : moveFields = intent.getSerializableExtra("move") as moveFields
+        val move : priorityMoveFields = intent.getSerializableExtra("move") as priorityMoveFields
 
         charactersList.addAll(initCharacters())
         displayCharacterList.addAll(charactersList)

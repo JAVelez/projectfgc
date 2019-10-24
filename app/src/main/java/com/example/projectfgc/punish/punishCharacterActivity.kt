@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projectfgc.R
 import com.example.projectfgc.character.MainActivity
 import com.example.projectfgc.data.characterFields
-import com.example.projectfgc.data.moveFields
+import com.example.projectfgc.data.priorityMoveFields
 import com.example.projectfgc.move.moveAdapter
 import kotlinx.android.synthetic.main.app_bar_layout.*
 import kotlinx.android.synthetic.main.content_punish_character_screen.*
@@ -37,7 +37,7 @@ class punishCharacterActivity : AppCompatActivity(){
         //helpButton.visibility = Button.GONE
 
         //  Get characterFields of chosen character
-        val move : moveFields = intent.getSerializableExtra("move") as moveFields
+        val move : priorityMoveFields = intent.getSerializableExtra("move") as priorityMoveFields
 
         //  Set values for move to punish
         val view = findViewById(R.id.pcConstraintLayout) as ConstraintLayout
@@ -52,7 +52,7 @@ class punishCharacterActivity : AppCompatActivity(){
 
 
         //  Make a punisher only list to pass onto moveAdapter
-        val punishers = mutableListOf<moveFields>()
+        val punishers = mutableListOf<priorityMoveFields>()
         for (m in character.moveList) {
             //  Cover low cases
             if (move.hitProperty == "low") {

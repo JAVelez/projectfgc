@@ -3,7 +3,7 @@ package com.example.projectfgc.data
 import java.io.Serializable
 
 
-data class moveFields (
+data class priorityMoveFields (
     val moveName: String,                       //  Move name
     val moveInput: String,                      //  Move's input
     val hitProperty: String,                    //  Where does the move hit (LMH)
