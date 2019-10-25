@@ -53,6 +53,7 @@ class punishMainActivity : AppCompatActivity() {
         else
             view.stickyMovesOnBlock.text = move.onBlock.toString()
         view.stickyMovesOnHit.text = move.onHit
+        view.stickyMovesDmg.text = move.totalDmg.toString()
 
         punishCharRecView.layoutManager = LinearLayoutManager( this@punishMainActivity)
         punishCharRecView.adapter =

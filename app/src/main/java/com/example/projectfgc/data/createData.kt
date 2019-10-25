@@ -177,7 +177,7 @@ object createData {
     fun getBryanMovesList(): MutableList<priorityMoveFields>{
         val result = mutableListOf<priorityMoveFields>()
 
-        //                           name input prop speed onB onH onCH dmg natural crouch forceCrouch
+        //                           name input prop speed onB onH onCH dmg natural crouch forceCrouch totaldmg propoerty
         result.add( getCompleteMove(priorityMoveFields( "", "1", h, 10, +1, "+8", "+8", listOf(7), true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "1, 2", h, 10, -2, "+5", "+5", listOf(7, 8), true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "One Two Body Blow", "1, 2, 1", m, 10, -6, "+6", c, listOf(7, 8, 18), false, false, false, 0, 0 ) ) )
@@ -352,7 +352,7 @@ object createData {
         result.add( getCompleteMove(priorityMoveFields( "", "1, 2, 2~1+2 u or d", 		s,	10,	-16	,"-9"	,"-9"	, listOf(7,8), true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Demon Kicker", "1, 2, 4", 				h,	10,	-9	,k	,ls	, listOf(7,8,21), true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "1, b+2", 				m,	10,	-2	,"+8"	,"+8"	, listOf(7,21),	 true, false, false, 0, 0 ) ) )
-        result.add( getCompleteMove(priorityMoveFields( "Demon Massacre", "1, b+2, 1", 			m,	10,	-15	,l	,l	, listOf(7,21,20), true, false, false, 0, 0 ) ) )
+        result.add( getCompleteMove(priorityMoveFields( "Demon Massacre", "1, b+2, 1", 			m,	10,	-15	,k	,k	, listOf(7,21,20), true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Demon Lair", "1, b+2, 4", 			m,	10,	+5	,k	,k	, listOf(7,21,30), true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "2", 				h,	10,	0	,"+9"	,"+9"	, listOf(10), true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Demon Backhand Spin", "2, 2", 				h,	10,	-13	,"-2"	,"-2"	, listOf(10,18), true, false, false, 0, 0 ) ) )
@@ -373,7 +373,7 @@ object createData {
         result.add( getCompleteMove(priorityMoveFields( "", "d/f+1", 				m,	13,	-1	,"+9"	,"+9"	, listOf(10),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Double Palm Strike", "d/f+1, 1", 			h,	13,	-2	,"+4"	,"+4"	, listOf(10,8),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Musso Tetsui", "d/f+1, 2", 			m,	13,	-13	,k	,k	, listOf(10,24), true, false, true, 0, 0 ) ) )
-        result.add( getCompleteMove(priorityMoveFields( "", "d/f+2", 				m,	15,	-7	,"+4"	,l	, listOf(14), true, false, false, 0, 0 ) ) )
+        result.add( getCompleteMove(priorityMoveFields( "", "d/f+2", 				m,	15,	-7	,"+4"	,la	, listOf(14), true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "d/f+4", 				m,	12,	-6	,"+5"	,"+5"	, listOf(15),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "d/f+1+2", 				m,	24,	-14	,k	,k	, listOf(25),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Hammer Punch", "d+1", 				m,	17,	-9	,"+2"	,"+2"	, listOf(16),	 true, false, false, 0, 0 ) ) )
@@ -398,7 +398,7 @@ object createData {
         result.add( getCompleteMove(priorityMoveFields( "", "u/f+3", 				m,	28,	-10	,k	,k	, listOf(17),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Hell Axle", "u/f+3, 4", 			m,	28,	+3	,k	,k	, listOf(17,20),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Wind Slicer", "u/f+4", 				m,	24,	-5	,k	,k	, listOf(25),	 true, false, false, 0, 0 ) ) )
-        result.add( getCompleteMove(priorityMoveFields( "Demon Uppercut", "f, F+2", 				m,	20,	-16	,l	,l	, listOf(22),	 true, false, false, 0, 0 ) ) )
+        result.add( getCompleteMove(priorityMoveFields( "Demon Uppercut", "f, F+2", 				m,	20,	-16	,la	,la	, listOf(22),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Left Split Kick", "f, F+3", 				m,	21,	-3	,k	,k	, listOf(25),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "b, f+2", 				m,	15,	-7	,"+4"	,"+4"	, listOf(12),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Tenma Destroyer", "b, f+2, 1", 			h,	15,	-9	,k	,k	, listOf(12,24),	 true, false, false, 0, 0 ) ) )
@@ -411,7 +411,7 @@ object createData {
         result.add( getCompleteMove(priorityMoveFields( "Quick Iron Fist", "WS+1", 				m,	14,	-14	,k	,k	, listOf(20),	 true, true, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Dark Thrust", "WS+2", 				m,	18,	-6	,"+11"	,k	, listOf(20),		 true, true, false, 0, 0 ) ) )	// verify ch prop
         result.add( getCompleteMove(priorityMoveFields( "", "WS+3", 				m,	18,	-11	,"0"	,"0"	, listOf(10),	 true, true, false, 0, 0 ) ) )
-        result.add( getCompleteMove(priorityMoveFields( "Holy Demon Cross", "WS+3,1+2", 			m,	18,	-14	,l	,l	, listOf(10,20),	 true, true, false, 0, 0 ) ) )
+        result.add( getCompleteMove(priorityMoveFields( "Holy Demon Cross", "WS+3,1+2", 			m,	18,	-14	,la	,la	, listOf(10,20),	 true, true, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "WS+4", 				m,	11,	-3	,"+8"	,"+8"	, listOf(13),	 true, true, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Tsunami Kick", "WS+4, 4", 				m,	11,	-15	,"0"	,"0"	, listOf(13,16),	 true, true, true, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Crouching Dragon Kick", "FC+d/f+4", 			l,	19,	-23	,k	,k	, listOf(20),	 true, true, false, 0, 0 ) ) )
@@ -428,10 +428,10 @@ object createData {
         result.add( getCompleteMove(priorityMoveFields( "", "RAI 2, 1", 			m,  35,	-17	,k	,k	, listOf(20,23),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "RAI 1+2", 			    "!",    76,	+20 ,c	,c	, listOf(35),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Crouch Dash", "f, n, d, D/F", 			s,	56, 0,  "0", "0", listOf(0), false, false, false, 0, 0) ) )
-        result.add( getCompleteMove(priorityMoveFields( "Dragon Uppercut", "f, n, d, d/f+1", 			m,	22,	-15	,l	,l	, listOf(25),	 true, false, false, 0, 0 ) ) )
-        result.add( getCompleteMove(priorityMoveFields( "Dragon Uppercut (Blue Spark)", "f, n, d/f+1", 			m,	21,	-10	,l	,l	, listOf(35),	 true, false, false, 0, 0 ) ) )
-        result.add( getCompleteMove(priorityMoveFields( "Wind God Fist", "f, n, d, d/F+2", 			h,	15,	-10	,l	,l	, listOf(20),	 true, false, false, 0, 0 ) ) )
-        result.add( getCompleteMove(priorityMoveFields( "Electric Wind God Fist", "f, n, d, d/f+2", 			h,	14,	+5	,l	,l	, listOf(23),	 true, false, false, 0, 0 ) ) )
+        result.add( getCompleteMove(priorityMoveFields( "Dragon Uppercut", "f, n, d, d/f+1", 			m,	22,	-15	,k	,k	, listOf(25),	 true, false, false, 0, 0 ) ) )
+        result.add( getCompleteMove(priorityMoveFields( "Dragon Uppercut (Blue Spark)", "f, n, d/f+1", 			m,	21,	-10	,la	,la	, listOf(35),	 true, false, false, 0, 0 ) ) )
+        result.add( getCompleteMove(priorityMoveFields( "Wind God Fist", "f, n, d, d/F+2", 			h,	15,	-10	,la	,la	, listOf(20),	 true, false, false, 0, 0 ) ) )
+        result.add( getCompleteMove(priorityMoveFields( "Electric Wind God Fist", "f, n, d, d/f+2", 			h,	14,	+5	,la	,la	, listOf(23),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Jumping Mid Kick", "f, n, d, d/f+3", 			m,	30,	+7	,k	,k	, listOf(30),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "f, n, d, D/F+3", 			l,	37,	-23	,k	,k	, listOf(24),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "f, n, d, d/f+4", 			l,	19,	-23	,"+5"	,k	, listOf(15),	 true, false, false, 0, 0 ) ) )
@@ -440,7 +440,7 @@ object createData {
         result.add( getCompleteMove(priorityMoveFields( "", "f, n, d, d/f+4, 4 (Single hit)",	l,	19,	-10	,"+3"	,k	, listOf(15,10), true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Spinning Demon", "f, n, d, d/f+4, 4, 4", 		l,	19,	-10	,k	,k	, listOf(15,10,8),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "f, n, d, d/f+4, 4, 4 (Single hit)",l,	19,	-10	,"+3"	,k	, listOf(15,10,8),	 true, false, false, 0, 0 ) ) )
-        result.add( getCompleteMove(priorityMoveFields( "", "HS n, 1", 				m,	28,	-15	,l	,l	, listOf(20),	 true, false, false, 0, 0 ) ) )
+        result.add( getCompleteMove(priorityMoveFields( "", "HS n, 1", 				m,	28,	-15	,k	,k	, listOf(20),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "", "HS n, 4", 				m,	28,	-3	,"+8"	,"+8"	, listOf(10),	 true, false, false, 0, 0 ) ) )
         result.add( getCompleteMove(priorityMoveFields( "Tsunami Kick", "HS n, 4, 4", 			m,	28,	-16	,"-5"	,"-5"	, listOf(10,20), true, false, true, 0, 0 ) ) )
 

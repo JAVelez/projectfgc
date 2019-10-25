@@ -33,6 +33,7 @@ class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : Recy
         else
             holder.view.stickyMovesOnBlock.text = move.onBlock.toString()
         holder.view.stickyMovesOnHit.text = move.onHit
+        holder.view.stickyMovesDmg.text = move.totalDmg.toString()
 
         // Touch a move to expand details
         // Hay un detalle en moves_layout con el height y los constraints en donde se supone que aqui haya hecho dos onClickListeners
