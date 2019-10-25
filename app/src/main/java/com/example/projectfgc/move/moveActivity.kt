@@ -4,14 +4,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projectfgc.R
 import com.example.projectfgc.data.priorityMoveFields
-import kotlinx.android.synthetic.main.activity_move_screen.*
+import kotlinx.android.synthetic.main.content_move_screen.*
 
 class moveActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_move_screen)
+        setContentView(R.layout.content_move_screen)
 
         //  Receive move data
         val move : priorityMoveFields = intent.getSerializableExtra("move") as priorityMoveFields

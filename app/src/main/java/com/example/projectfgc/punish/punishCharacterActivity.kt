@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log.d
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projectfgc.R
 import com.example.projectfgc.character.MainActivity
@@ -49,6 +50,7 @@ class punishCharacterActivity : AppCompatActivity(){
         else
             view.stickyMovesOnBlock.text = move.onBlock.toString()
         view.stickyMovesOnHit.text = move.onHit
+        view.stickyMovesDmg.text = move.totalDmg.toString()
 
 
         //  Make a punisher only list to pass onto moveAdapter
@@ -82,6 +84,9 @@ class punishCharacterActivity : AppCompatActivity(){
         punishLayout.movesRecView.apply{
             layoutManager = LinearLayoutManager( this@punishCharacterActivity)
             adapter = moveAdapter(punishers, 1)
+            val divItemDecor = DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL)
+            divItemDecor.setDrawable(resources.getDrawable(R.drawable.divider))
+            addItemDecoration(divItemDecor)
         }
 
     }

@@ -1,5 +1,9 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="move_detail_height">40dp</dimen>
+    <dimen name="move_detail_width">250dp</dimen>
+    <dimen name="move_top_padding">12dp</dimen>
+    <dimen name="divider_height">0.1dp</dimen>
     <dimen name="moves_width">125dp</dimen>
     <dimen name="moves_onhit_width">80dp</dimen>
     <dimen name="moves_dmg_width">40dp</dimen>

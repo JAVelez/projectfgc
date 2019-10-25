@@ -6,6 +6,7 @@ import android.view.Menu
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
@@ -40,14 +41,19 @@ class characterActivity : AppCompatActivity() {
         moveList.addAll(character.moveList)
         displayMoveList.addAll(moveList)
 
-//        helpButton.setOnClickListener {
-//            helpSnackBar()
-//        }
+        //movesRecView!!.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL))
 
-        move_list = findViewById(R.id.movesRecView) as RecyclerView
-        movesRecView.apply{
+
+        move_list = findViewById(R.id.movesRecView)
+        //move_list.addItemDecoration(DividerItemDecoration(this, ))
+
+        move_list.apply{
             layoutManager = LinearLayoutManager( this@characterActivity)
             adapter = moveAdapter(displayMoveList, 0)   // state declares that it is coming from characterActivity instead of punishCharacterActivity
+            val divItemDecor = DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL)
+            divItemDecor.setDrawable(resources.getDrawable(R.drawable.divider))
+            addItemDecoration(divItemDecor)
+
         }
     }
 
