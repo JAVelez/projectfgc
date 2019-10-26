@@ -57,15 +57,15 @@ class punishCharacterActivity : AppCompatActivity(){
         val punishers = mutableListOf<priorityMoveFields>()
         for (m in character.moveList) {
             //  Cover low cases
-            if (move.hitProperty == "low") {
-                d("low", "${m.crouch} ${m.moveInput}")
+            if (move.hitProperty.get(move.hitProperty.size - 1) == "l") {   //this will not consider cancels after lows or sway after a low and will display standing punishes
+                //d("low", "${m.crouch} ${m.moveInput}")
                 if(m.crouch) {
                     if (m.speed <= abs(move.onBlock) && m.natural) {
                         punishers.add(m)
                     }
                 }
             }else if (m.speed <= abs(move.onBlock)) {
-                d("highmid", "${move.moveInput}")
+                //d("highmid", "${move.moveInput}")
                 if(m.natural) {
                     if(move.forceCrouch) {
                         if (m.crouch)

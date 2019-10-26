@@ -1,7 +1,11 @@
 package com.example.projectfgc.character
 
+import android.content.Context
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         toolbar.setTitle("")
         setSupportActionBar(toolbar)
+
         charactersList.addAll(initCharacters())
         displayCharacterList.addAll(charactersList)
 
@@ -40,9 +45,17 @@ class MainActivity : AppCompatActivity() {
 
         menuInflater.inflate(R.menu.search_menu, menu)
         val searchItem = menu.findItem(R.id.app_bar_search)
+        val searchView = searchItem.actionView as SearchView
 
         if(searchItem != null){
-            val searchView = searchItem.actionView as SearchView
+            searchView.isIconified = false
+            searchView.setOnCloseListener(object: SearchView.OnCloseListener {
+                override fun onClose(): Boolean {
+                    searchView.clearFocus()
+                    return true
+                }
+
+            })
 
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
 
@@ -73,7 +86,41 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         }
+
+        searchView.setOnQueryTextFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                searchView.showKeyboard()
+            }
+            else {
+                searchView.hideKeyboard()
+            }
+        }
+
+        searchItem.setOnActionExpandListener(object: MenuItem.OnActionExpandListener {
+            override fun onMenuItemActionExpand(p0: MenuItem?): Boolean {
+                searchView.isIconified = false
+                searchView.requestFocusFromTouch()
+                return true
+            }
+
+            override fun onMenuItemActionCollapse(p0: MenuItem?): Boolean {
+                // when back, clear all search
+                searchView.setQuery("", true)
+                return true
+            }
+        })
+
         return super.onCreateOptionsMenu(menu)
     }
 
+}
+
+fun View.showKeyboard() {
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY)
+}
+
+fun View.hideKeyboard() {
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.hideSoftInputFromWindow(getWindowToken(), 0)
 }

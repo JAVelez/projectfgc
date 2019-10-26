@@ -6,7 +6,7 @@ import java.io.Serializable
 data class priorityMoveFields (
     val moveName: String,                       //  Move name
     val moveInput: String,                      //  Move's input
-    val hitProperty: String,                    //  Where does the move hit (LMH)
+    val hitProperty: List<String>,                    //  Where does the move hit (LMH)
     val speed: Int,                             //  Startup frames :: !natural will display speed in between () ex. (10)
     val onBlock: Int,                           //  Frames when the move hits a blocking opponent
     val onHit: String,                          //  Opponent's state after being hit with the move (knockdown, launch, +-frames)

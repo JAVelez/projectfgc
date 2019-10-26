@@ -3,9 +3,9 @@ package com.example.projectfgc.move
 import android.content.Intent
 import android.view.*
 import android.widget.Toast
-import androidx.core.view.GestureDetectorCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
+import com.example.projectfgc.data.createData
 import com.example.projectfgc.data.priorityMoveFields
 import com.example.projectfgc.punish.punishMainActivity
 import kotlinx.android.synthetic.main.moves_layout.view.*
@@ -50,7 +50,12 @@ class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : Recy
                     intent.putExtra("move", move)
                     holder.view.context.startActivity(intent)
                 } else {
-                    Toast.makeText(holder.view.context, "The move isn't punishable!", Toast.LENGTH_LONG).show()
+                    var response = createData.getRecommendation(move)
+                    if (move.onBlock < -5 && response == "The string isn't punishable!"){
+                        Toast.makeText(holder.view.context, response + " But it's your turn.", Toast.LENGTH_LONG).show()
+                    }else {
+                        Toast.makeText(holder.view.context, response, Toast.LENGTH_LONG).show()
+                    }
                 }
             }
         }

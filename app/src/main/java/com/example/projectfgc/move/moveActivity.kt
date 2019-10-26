@@ -33,7 +33,7 @@ class moveActivity : AppCompatActivity(){
             moveSpeed.text = "(" + move.speed.toString() + ")"
         else moveSpeed.text = move.speed.toString()
 
-        moveHitProperty.text = move.hitProperty
+        moveHitProperty.text = move.hitProperty.toString()
         if(move.onBlock > 0)
             moveOnBlock.text = "+" + move.onBlock.toString()
         else

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.GestureDetector
 import android.view.Menu
+import android.view.MenuItem
 import android.view.MotionEvent
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
@@ -77,10 +78,9 @@ class characterActivity : AppCompatActivity(){
 
         menuInflater.inflate(R.menu.search_menu, menu)
         var searchItem = menu.findItem(R.id.app_bar_search)
+        var searchView = searchItem.actionView as SearchView
 
         if(searchItem != null){
-            var searchView = searchItem.actionView as SearchView
-
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
 
                 override fun onQueryTextSubmit(query: String?): Boolean {
@@ -110,6 +110,30 @@ class characterActivity : AppCompatActivity(){
                 }
             })
         }
+
+        searchView.setOnQueryTextFocusChangeListener { view, hasFocus ->
+            if (hasFocus) {
+                searchView.showKeyboard()
+            }
+            else {
+                searchView.hideKeyboard()
+            }
+        }
+
+        searchItem.setOnActionExpandListener(object: MenuItem.OnActionExpandListener {
+            override fun onMenuItemActionExpand(p0: MenuItem?): Boolean {
+                searchView.isIconified = false
+                searchView.requestFocusFromTouch()
+                return true
+            }
+
+            override fun onMenuItemActionCollapse(p0: MenuItem?): Boolean {
+                // when back, clear all search
+                searchView.setQuery("", true)
+                return true
+            }
+        })
+
         return super.onCreateOptionsMenu(menu)
     }
 
