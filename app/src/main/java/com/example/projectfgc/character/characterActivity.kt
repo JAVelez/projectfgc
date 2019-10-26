@@ -2,11 +2,16 @@ package com.example.projectfgc.character
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.GestureDetector
 import android.view.Menu
+import android.view.MotionEvent
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat.startActivity
+import androidx.core.view.GestureDetectorCompat
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
@@ -18,10 +23,12 @@ import kotlinx.android.synthetic.main.app_bar_layout.*
 import kotlinx.android.synthetic.main.content_character_screen.*
 import kotlinx.android.synthetic.main.char_layout.view.*
 
-class characterActivity : AppCompatActivity() {
+class characterActivity : AppCompatActivity(){
+
     lateinit var move_list: RecyclerView
     val displayMoveList: MutableList<priorityMoveFields> = ArrayList()
     val moveList: MutableList<priorityMoveFields> = ArrayList()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -38,14 +45,11 @@ class characterActivity : AppCompatActivity() {
         helpSnackBar()
 
         val character: characterFields = setCharBanner()
+
         moveList.addAll(character.moveList)
         displayMoveList.addAll(moveList)
 
-        //movesRecView!!.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL))
-
-
         move_list = findViewById(R.id.movesRecView)
-        //move_list.addItemDecoration(DividerItemDecoration(this, ))
 
         move_list.apply{
             layoutManager = LinearLayoutManager( this@characterActivity)
@@ -53,12 +57,11 @@ class characterActivity : AppCompatActivity() {
             val divItemDecor = DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL)
             divItemDecor.setDrawable(resources.getDrawable(R.drawable.divider))
             addItemDecoration(divItemDecor)
-
         }
     }
 
     private fun helpSnackBar(){
-        Snackbar.make(characterScreenLayout, "\"Move\" opens up details. \"On Block\" opens up punishes.", Snackbar.LENGTH_LONG).show()
+        Snackbar.make(characterScreenLayout, "Left half opens up details. Right half opens up punishes.", Snackbar.LENGTH_LONG).show()
     }
 
     private fun setCharBanner(): characterFields {

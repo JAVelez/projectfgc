@@ -1,17 +1,16 @@
 package com.example.projectfgc.move
 
 import android.content.Intent
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
+import androidx.core.view.GestureDetectorCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
 import com.example.projectfgc.data.priorityMoveFields
 import com.example.projectfgc.punish.punishMainActivity
 import kotlinx.android.synthetic.main.moves_layout.view.*
 
-class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : RecyclerView.Adapter<moveAdapter.ViewHolder>() {
+class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : RecyclerView.Adapter<moveAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutView = LayoutInflater.from(parent.context).inflate(R.layout.moves_layout, parent, false)
@@ -37,15 +36,15 @@ class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : Recy
         // Touch a move to expand details
         // Hay un detalle en moves_layout con el height y los constraints en donde se supone que aqui haya hecho dos onClickListeners
 
-
-        holder.view.stickyMovesMoveName.setOnClickListener {
+        holder.view.detailButton.setOnClickListener {
             val intent = Intent(holder.view.context, moveActivity::class.java)
             intent.putExtra("move", move)
             holder.view.context.startActivity(intent)
         }
+
         if (state == 0) {
 
-            holder.view.stickyMovesOnBlock.setOnClickListener {
+            holder.view.punishButton.setOnClickListener {
                 if (move.onBlock <= -10) {
                     val intent = Intent(holder.view.context, punishMainActivity::class.java)
                     intent.putExtra("move", move)
