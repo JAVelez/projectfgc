@@ -1,9 +1,12 @@
 package com.example.projectfgc.move
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projectfgc.R
+import com.example.projectfgc.character.MainActivity
 import com.example.projectfgc.data.priorityMoveFields
+import kotlinx.android.synthetic.main.app_bar_layout.*
 import kotlinx.android.synthetic.main.content_move_screen.*
 
 class moveActivity : AppCompatActivity(){
@@ -11,7 +14,15 @@ class moveActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.content_move_screen)
+        setContentView(R.layout.activity_move_screen)
+
+        toolbar.setTitle("")
+        setSupportActionBar(toolbar)
+        titleLogo.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
 
         //  Receive move data
         val move : priorityMoveFields = intent.getSerializableExtra("move") as priorityMoveFields
