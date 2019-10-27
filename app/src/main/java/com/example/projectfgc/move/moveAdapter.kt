@@ -1,6 +1,7 @@
 package com.example.projectfgc.move
 
 import android.content.Intent
+import android.util.Log.d
 import android.view.*
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -54,6 +55,7 @@ class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : Recy
                     if (move.onBlock < -5 && response == "The string isn't punishable!"){
                         Toast.makeText(holder.view.context, response + " But it's your turn.", Toast.LENGTH_LONG).show()
                     }else {
+                        d("response", "${response}")
                         Toast.makeText(holder.view.context, response, Toast.LENGTH_LONG).show()
                     }
                 }

@@ -3,6 +3,7 @@ package com.example.projectfgc.punish
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log.d
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -55,26 +56,38 @@ class punishCharacterActivity : AppCompatActivity(){
 
         //  Make a punisher only list to pass onto moveAdapter
         val punishers = mutableListOf<priorityMoveFields>()
-        for (m in character.moveList) {
-            //  Cover low cases
-            if (move.hitProperty.get(move.hitProperty.size - 1) == "l") {   //this will not consider cancels after lows or sway after a low and will display standing punishes
-                //d("low", "${m.crouch} ${m.moveInput}")
-                if(m.crouch) {
-                    if (m.speed <= abs(move.onBlock) && m.natural) {
+
+        //  Cover SEN case where SEN is a high crush
+        if(move.hitProperty[move.hitProperty.size-1] == "(SEN)"){
+            for (m in character.moveList){
+                if(m.speed<=abs(move.onBlock) && m.natural && m.hitProperty[0] == "m" ){
+                    if(!m.crouch){
                         punishers.add(m)
                     }
                 }
-            }else if (m.speed <= abs(move.onBlock)) {
-                //d("highmid", "${move.moveInput}")
-                if(m.natural) {
-                    if(move.forceCrouch) {
-                        if (m.crouch)
+            }
+            Toast.makeText(view.context, "Use a long range and low hitting mid as a punish!", Toast.LENGTH_LONG).show()
+        }else{
+            for (m in character.moveList) {
+                //  Cover low cases
+                if (move.hitProperty.get(move.hitProperty.size - 1) == "l") {   //this will not consider cancels after lows or sway after a low and will display standing punishes
+                    //d("low", "${m.crouch} ${m.moveInput}")
+                    if(m.crouch) {
+                        if (m.speed <= abs(move.onBlock) && m.natural) {
                             punishers.add(m)
-                    }else if(!m.crouch)
-                        punishers.add(m)
+                        }
+                    }
+                }else if (m.speed <= abs(move.onBlock)) {
+                    //d("highmid", "${move.moveInput}")
+                    if(m.natural) {
+                        if(move.forceCrouch) {
+                            if (m.crouch)
+                                punishers.add(m)
+                        }else if(!m.crouch)
+                            punishers.add(m)
+                    }
                 }
             }
-
         }
 
         //  Sort punishers by priority
