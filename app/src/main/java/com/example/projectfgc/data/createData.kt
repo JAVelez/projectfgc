@@ -2,6 +2,7 @@ package com.example.projectfgc.data
 
 import android.util.Log.d
 import com.example.projectfgc.R
+import java.util.*
 
 object createData {
 
@@ -14,7 +15,7 @@ object createData {
     val m: String = "m"
     val mg: String = "mid grounded" //  mid attack that finishes grounded
     val h: String = "h"
-    //val hg: String = "high grounded"
+    val hg: String = "high grounded"
     val s: String = "special"
 
 
@@ -131,7 +132,7 @@ object createData {
 
             "Kuma" -> char.moveList = getEmptyMovesList()
 
-            "Lars Alexander" -> char.moveList = getEmptyMovesList()
+            "Lars Alexander" -> char.moveList = getLarsMovesList()
 
             "Lee Chaolan" -> char.moveList = getEmptyMovesList()
 
@@ -451,6 +452,127 @@ object createData {
         return result
     }
 
+    fun getLarsMovesList(): MutableList<priorityMoveFields>{
+        val result = mutableListOf<priorityMoveFields>()
+
+        result.add( getCompleteMove(priorityMoveFields( "",	"in rage 1+2",	listOf(m), 	20,	-22,	k,	k,	listOf(55),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"in rage SEN 1+2",	listOf(m, "(DEN)"), 	12,	7,	k,	k,	listOf(27),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"in rage SEN 1+2, b+2+3",	listOf(m, "!"), 	12,	0 ,	k,	k,	listOf(27,33),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"1",	listOf(h), 	10,	1,	"8",	"8",	listOf(7),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"1, 1",	listOf(h, m), 	10,	-8,	"0",	"0",	listOf(7,10),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"1, 1, 1",	listOf(h, m, m), 	10,	-14,	k,	k,	listOf(7,10,15),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"1, 2",	listOf(h, h), 	10,	-1,	"7",	"7",	listOf(7,9),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"1, 4",	listOf(h, l), 	10,	-12,	"1",	"1",	listOf(7,10),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"2",	listOf(h), 	10,	0,	"8",	"8",	listOf(10),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"2, 1",	listOf(h, m), 	10,	-5,	"6",	"6",	listOf(10,7),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"2, 1, 3",	listOf(h, m, m), 	10,	-12,	k,	k,	listOf(10,10,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"2, 1, 4",	listOf(h, m, h), 	10,	-7,	k,	k,	listOf(10,10,27),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"3",	listOf(h), 	15,	-12,	"5",	"5",	listOf(16),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"3, D",	listOf(h), 	15,	-12,	"5",	"5",	listOf(16),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"4",	listOf(h), 	17,	-7,	k,	k,	listOf(27),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+1",	listOf(h), 	13,	-5,	"6",	"6",	listOf(10),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+1, 2",	listOf(h, m), 	13,	-5,	"6",	"6",	listOf(10,11),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+1, 2, F",	listOf(h, m, "(SEN)"), 	13,	-8,	"3",	"3",	listOf(10,11),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+1, 2, 3",	listOf(h, m, m), 	13,	-9,	k,	k,	listOf(10,11,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+1, 2, 3, F",	listOf(h, m, m, "(DEN)"), 	13,	-12,	k,	k,	listOf(10,11,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+2",	listOf(h), 	12,	-6,	"3",	"3",	listOf(10),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+2, 1",	listOf(h, h, "(SEN)"), 	12,	-5,	"6",	"6",	listOf(10,12),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+2, 1, F",	listOf(h, h, "(SEN)"), 	12,	-6,	"5",	"5",	listOf(10,12),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+2, 4",	listOf(h, h), 	12,	-12,	k,	k,	listOf(10,22),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+4",	listOf(m), 	17,	-9,	"7",	"7",	listOf(12),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+4, 1",	listOf(m, m), 	17,	-9,	"2",	"2",	listOf(12,8),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+4, 1, 2",	listOf(m, m, m), 	17,	-10,	"2",	"2",	listOf(12,8,8),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+4, 1, 2, 1",	listOf(m, m, m, m), 	17,	-14,	"ED",	"ED",	listOf(12,8,8,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+1+2",	listOf(m), 	15,	-13,	"c",	"c",	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+1+4",	listOf(m), 	13,	-18,	"ED",	"ED",	listOf(28),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/f+1",	listOf(m), 	13,	-1,	"5",	"5",	listOf(14),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/f+2",	listOf(m), 	16,	-8,	"3",	"3",	listOf(15),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/f+2, 1",	listOf(m, h), 	16,	-7,	k,	k,	listOf(15,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/f+3",	listOf(m), 	16,	-7,	"3",	"3",	listOf(15),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/f+3, D",	listOf(m, "(DEN)"), 	16,	-8,	"6",	"6",	listOf(15),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/f+3, 3",	listOf(m, m), 	16,	-15,	k,	k,	listOf(15,24),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/f+4",	listOf(m), 	15,	-8,	"2",	"2",	listOf(16),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/f+1+2",	listOf(m), 	25,	-12,	k,	k,	listOf(25),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d+2",	listOf(m), 	18,	0,	"8",	k,	listOf(17),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d+2, D",	listOf(m), 	18,	0,	"8",	k,	listOf(17),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d+3",	listOf(l), 	15,	-14,	"-3",	"-3",	listOf(8),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d+3, 1",	listOf(l, h, h), 	15,	-7,	"4",	"4",	listOf(8,4,10),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d+1+2",	listOf(l), 	24,	-20,	k,	k,	listOf(25),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/b+1",	listOf(l), 	17,	-12,	"-1",	"-1",	listOf(9),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/b+1, 3",	listOf(l, h), 	17,	-12,	"-1",	"-1",	listOf(9,10),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/b+1, 3, D",	listOf(l, h), 	17,	-12,	"-1",	"-1",	listOf(9,10),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/b+2",	listOf(m), 	15,	-8,	"3",	"3",	listOf(12),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/b+2, F",	listOf(m, "(SEN)"), 	15,	-5,	"6",	"6",	listOf(12),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/b+2, 1",	listOf(m, m), 	15,	-8,	"6",	"6",	listOf(12,8),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/b+2, 3",	listOf(m, m), 	15,	-13,	"0",	"23",	listOf(12,15),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/b+2, 3* (Very long hold)",	listOf(m, m), 	15,	8,	k,	k,	listOf(12,25),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/b+4",	listOf(l), 	21,	-26,	"5",	k,	listOf(17),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"d/b+1+2",	listOf(m), 	26,	-14,	"5",	"c",	listOf(18),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"b+1",	listOf(m), 	15,	-9,	"4",	k,	listOf(17),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"b+2",	listOf(m), 	16,	-7,	"4",	"4",	listOf(12),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"b+2, 1",	listOf(m, m), 	16,	-10,	"4",	k,	listOf(12,17),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"b+2, 3",	listOf(m, h), 	16,	-8,	k,	k,	listOf(12,21),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"b+3",	listOf(m), 	17,	-12,	"4",	"4",	listOf(14),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"b+3, F",	listOf(m, "(SEN)"), 	17,	-5,	"11",	"11",	listOf(14),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"b+3, 4",	listOf(m, h), 	17,	-8,	k,	k,	listOf(14,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"b+4",	listOf(m), 	15,	-8,	"8",	"Throw(k)",	listOf(23),	true, false, false, 0, 0) ) )
+        //result.add( getCompleteMove(priorityMoveFields( "",	"b+4(CH in front)",	listOf(m, "(throw)"), 	15,	,	"",	"Throw(k)",	listOf(27,23),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"b+1+2",	listOf(m, m), 	21,	-11,	"6",	"6",	listOf(8,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"b+2+3",	listOf("!"), 	84,	0,	k,	k,	listOf(45),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"u/b or u or u/f+3",	listOf(m, m), 	34,	-26,	"la",	"la",	listOf(12, 14),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"u/b+4",	listOf(m), 	25,	-9,	k,	k,	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"u or u/f+4",	listOf(m), 	25,	-9,	k,	k,	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f, F+2",	listOf(m), 	22,	-13,	"la",	"la",	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f, F+2, f",	listOf(m, "(SEN)"), 	22,	-59,	"la",	"la",	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f, F+3",	listOf(m), 	19,	-8,	k,	k,	listOf(22),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f, F+4",	listOf(l), 	22,	-31,	"5",	"5",	listOf(14),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f, F+4, 3",	listOf(l, m), 	22,	-16,	"3",	"3",	listOf(14,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f, F+1+2",	listOf(m), 	17,	-11,	k,	"",	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f, F+3+4",	listOf(l, l), 	20,	-16,	"0",	"",	listOf(11,15),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f, b+2",	listOf(m), 	14,	-12,	"0",	"0",	listOf(10),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f, b+2, 1",	listOf(m, m), 	14,	-18,	"la",	"la",	listOf(10,10),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f, f, f+3",	listOf(m), 	23,	8,	k,	k,	listOf(30),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"WS+1",	listOf(m), 	15,	-12,	"la",	"la",	listOf(16),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"WS+1 When hit f",	listOf(m, "(SEN)"), 	15,	-56,	"la",	"la",	listOf(16),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"WS+2",	listOf(m), 	13,	-8,	"3",	"3",	listOf(13),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"WS+2, F",	listOf(m, "(SEN)"), 	13,	-5,	"7",	"6",	listOf(13),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"WS+2, D",	listOf(m, "(DEN)"), 	13,	-12,	"0",	"-1",	listOf(13),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"WS+2, 1",	listOf(m, m), 	13,	-12,	"5",	k,	listOf(13,17),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"WS+3",	listOf(h), 	20,	7,	k,	k,	listOf(30),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"WS+4",	listOf(m), 	11,	-6,	"5",	"5",	listOf(16),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"FC+d/f+2",	listOf(m), 	16,	-8,	"5",	k,	listOf(19),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"FC+d/f+1+2",	listOf(l, l), 	31,	-12,	"1",	"1",	listOf(10,14),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"SS+2",	listOf(m), 	25,	-7,	k,	k,	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"Opponent Down d+3+4",	listOf(l), 	22,	-14,	"-3",	"-3",	listOf(25),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"Opponent Down d+3+4*, F",	listOf(l, "(SEN)"), 	22,	-14,	"-3",	"-3",	listOf(20),	true, false, false, 0, 0) ) )
+        //result.add( getCompleteMove(priorityMoveFields( "",	"1+2+3+4",	listOf(s), 	22,	,	"",	"",	listOf(),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"1+2+3+4, 2",	listOf(m), 	46,	-18,	"la",	"la",	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"SEN only from certain moves",	listOf("(SEN)"), 	46,	-46,	" ",	" ",	listOf(0),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"SEN 1",	listOf(m), 	12,	-10,	k,	k,	listOf(27),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"SEN 2",	listOf(l), 	19,	-13,	"5",	k,	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"SEN 3",	listOf(m), 	14,	-14,	"la ",	"la",	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"SEN 4",	listOf(h), 	20,	-10,	"ls",	"ls",	listOf(27),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"SEN d/f+1",	listOf(m), 	14,	0,	"8",	k,	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"f+3 or from certain moves",	listOf(s), 	14,	-14,	" ",	" ",	listOf(0),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"DEN F",	listOf("(SEN)"), 	60,	-60,	" ",	" ",	listOf(0),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"DEN 1",	listOf(h), 	26,	-1,	"8",	"8",	listOf(14),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"DEN 1, F",	listOf(h, "(SEN)"), 	26,	-3,	"6",	"6",	listOf(14),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"DEN 1, 2",	listOf(h, h), 	26,	-6,	k,	k,	listOf(14,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"DEN 2",	listOf(m), 	32,	-7,	"7",	"c",	listOf(19),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"DEN 3",	listOf(m), 	42,	4,	k,	k,	listOf(25),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"DEN 4, 3",	listOf(l, m), 	21,	-16,	"3",	"3",	listOf(14,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"DEN 1+2",	listOf(h), 	28,	-10,	k,	k,	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"DEN 2+3",	listOf("h(Throw)"), 	27,	0,	"Throw(k)",	" ",	listOf(20,20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"DEN 2+3 (Opponent in air)",	listOf("Air throw"), 	27,	0,	"Throw(k)",	" ",	listOf(23,8),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"u/b or u or u/f+3+4",	listOf(s), 	0,	0,	" ",	" ",	listOf(0),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"u/b or u or u/f+3+4*",	listOf(h), 	25,	0,	k,	" ",	listOf(40),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"u/f+3+4, 1",	listOf(l), 	53,	-13,	"3",	k,	listOf(20),	true, false, false, 0, 0) ) )
+        result.add( getCompleteMove(priorityMoveFields( "",	"u/f+3+4, 4",	listOf(m), 	37,	-8,	"8",	"k ",	listOf(20),	true, false, false, 0, 0) ) )
+
+
+        return result
+
+    }
     fun getMokujinMovesList(): MutableList<priorityMoveFields>{
         val result = mutableListOf<priorityMoveFields>()
         //                    name  inpt  prop speed onB onH onCH dmg natural crouch forceCrouch
@@ -489,7 +611,7 @@ object createData {
         result.add( priorityMoveFields( "-22low", "1", listOf(l), 50, -22, "0", "0", listOf(0), false, false, false, 0, 0 )  )
         result.add( priorityMoveFields( "-23low", "1", listOf(l), 50, -23, "0", "0", listOf(0), false, false, false, 0, 0 )  )
         result.add( priorityMoveFields( "-24low", "1", listOf(l), 50, -24, "0", "0", listOf(0), false, false, false, 0, 0 )  )
-        // mids that force crouc)h
+        // mids that force crouch
         result.add( priorityMoveFields( "-9f FC", "1", listOf(m), 50, -9, "0", "0", listOf(0), false, false, true, 0, 0 ) )
         result.add( priorityMoveFields( "-10f FC", "1",listOf( m), 50, -10, "0", "0", listOf(0), false, false, true , 0, 0 ) )
         result.add( priorityMoveFields( "-11f FC", "1", listOf(m), 50, -11, "0", "0", listOf(0), false, false, true , 0, 0 ) )
