@@ -67,6 +67,14 @@ class punishCharacterActivity : AppCompatActivity(){
                 }
             }
             Toast.makeText(view.context, "Use a long range and low hitting mid as a punish!", Toast.LENGTH_LONG).show()
+        }else if(move.hitProperty[move.hitProperty.size-1] == "(VTS)"){
+            for (m in character.moveList){
+                if(m.speed<=abs(move.onBlock) && m.natural && m.hitProperty[0] == "m" ){
+                    if(!m.crouch){
+                        punishers.add(m)
+                    }
+                }
+            }
         }else{
             for (m in character.moveList) {
                 //  Cover low cases
