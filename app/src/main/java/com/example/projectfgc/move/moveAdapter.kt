@@ -53,10 +53,10 @@ class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : Recy
                 } else {
                     var response = createData.getRecommendation(move)
                     if (move.onBlock < -5 && response == "The string isn't punishable!"){
-                        Toast.makeText(holder.view.context, response + " But it's your turn.", Toast.LENGTH_LONG).show()
+                        Toast.makeText(holder.view.context, response + " But it's your turn.", Toast.LENGTH_SHORT).show()
                     }else {
                         d("response", "${response}")
-                        Toast.makeText(holder.view.context, response, Toast.LENGTH_LONG).show()
+                        Toast.makeText(holder.view.context, response, Toast.LENGTH_SHORT).show()
                     }
                 }
             }

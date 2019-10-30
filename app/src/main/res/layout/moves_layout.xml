@@ -5,7 +5,6 @@
     android:id="@+id/moveConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorBackground"
     android:paddingTop="@dimen/moves_padding"
     android:paddingBottom="@dimen/moves_padding">
 
@@ -13,6 +12,8 @@
         android:id="@+id/detailButton"
         android:layout_width="@dimen/moves_input_width"
         android:layout_height="0dp"
+        android:visibility="visible"
+        android:background="@drawable/ripple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,6 +22,7 @@
         android:id="@+id/punishButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/ripple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
