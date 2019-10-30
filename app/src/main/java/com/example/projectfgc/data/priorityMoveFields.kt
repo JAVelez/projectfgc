@@ -17,5 +17,9 @@ data class priorityMoveFields (
     val crouch: Boolean,
     val forceCrouch: Boolean,
     var totalDmg: Int,                          //  stores sum of dmg to display and use in priority calculations
-    var priority: Int                           //  stores value of priority to be sorted by
+    var priority: Int,                          //  stores value of priority to be sorted by
+    val range: Double,                           //  how far does the last move in the string reach?
+    val pushback: Double,                        //  how far does the last hit of the string(move) push you
+    val core: Boolean,                          //  is it a core move of the character?
+    val tracking: String                       //  where does the last hit track?
 ) : Serializable

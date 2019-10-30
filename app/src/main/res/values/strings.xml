@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">t7Coqui</string>
     <string name="action_settings">Settings</string>
+    <string name="c">CRUMPLE</string>
+    <string name="k">KND</string>
+    <string name="la">LAUNCH</string>
+    <string name="ls">SCREW</string>
+    <string name="l">l</string>
+    <string name="lg">low grounded</string>
+    <string name="m">m</string>
+    <string name="mg">mid grounded</string>
+    <string name="h">h</string>
+    <string name="hj">h</string>
+    <string name="hg">high grounded</string>
+    <string name="s">special</string>
+    <string name="vts">(VTS)</string>
+    <string name="vtsc">(VTS cancel)"</string>
+    <string name="sen">(SEN)</string>
+    <string name="den">(DEN)</string>
+
 </resources>
