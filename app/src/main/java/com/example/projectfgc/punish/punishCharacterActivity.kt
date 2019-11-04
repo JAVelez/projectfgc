@@ -60,19 +60,19 @@ class punishCharacterActivity : AppCompatActivity(){
         //  Cover SEN case where SEN is a high crush
         if(move.hitProperty[move.hitProperty.size-1] == "(SEN)"){
             for (m in character.moveList){
-                if(m.speed<=abs(move.onBlock) && m.natural && m.hitProperty[0] == "m" ){
-                    if(!m.crouch){
+                if(m.speed<=abs(move.onBlock) && m.natural && m.hitProperty[0] == "m" && m.range >= move.pushback && !m.crouch){
+                    //if(!m.crouch){
                         punishers.add(m)
-                    }
+                    //}
                 }
             }
             Toast.makeText(view.context, "Use a long range and low hitting mid as a punish!", Toast.LENGTH_LONG).show()
         }else if(move.hitProperty[move.hitProperty.size-1] == "(VTS)"){
             for (m in character.moveList){
-                if(m.speed<=abs(move.onBlock) && m.natural && m.hitProperty[0] == "m" ){
-                    if(!m.crouch){
+                if(m.speed<=abs(move.onBlock) && m.natural && m.hitProperty[0] == "m" && m.range >= move.pushback && !m.crouch ){
+                    //if(!m.crouch){
                         punishers.add(m)
-                    }
+                    //}
                 }
             }
         }else{
@@ -81,7 +81,7 @@ class punishCharacterActivity : AppCompatActivity(){
                 if (move.hitProperty.get(move.hitProperty.size - 1) == "l") {   //this will not consider cancels after lows or sway after a low and will display standing punishes
                     //d("low", "${m.crouch} ${m.moveInput}")
                     if(m.crouch) {
-                        if (m.speed <= abs(move.onBlock) && m.natural) {
+                        if (m.speed <= abs(move.onBlock) && m.natural && m.range >= move.pushback) {
                             punishers.add(m)
                         }
                     }
@@ -89,9 +89,9 @@ class punishCharacterActivity : AppCompatActivity(){
                     //d("highmid", "${move.moveInput}")
                     if(m.natural) {
                         if(move.forceCrouch) {
-                            if (m.crouch)
+                            if (m.crouch && m.range >= move.pushback)
                                 punishers.add(m)
-                        }else if(!m.crouch)
+                        }else if(m.range >= move.pushback && !m.crouch)
                             punishers.add(m)
                     }
                 }
