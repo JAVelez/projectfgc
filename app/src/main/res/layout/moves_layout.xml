@@ -36,7 +36,7 @@
         android:layout_marginStart="8dp"
         android:text="Move name"
         android:textColor="@color/colorText"
-        android:textSize="@dimen/moves_info_text_size"
+        android:textSize="@dimen/moves_expanded_text_size"
         app:layout_constraintBottom_toTopOf="@+id/stickyMovesMoveNotation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
