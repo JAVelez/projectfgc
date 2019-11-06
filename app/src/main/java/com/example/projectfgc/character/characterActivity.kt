@@ -2,6 +2,7 @@ package com.example.projectfgc.character
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log.d
 import android.view.GestureDetector
 import android.view.Menu
 import android.view.MenuItem
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
+import com.example.projectfgc.data.c
 import com.example.projectfgc.data.characterFields
 import com.example.projectfgc.data.priorityMoveFields
 import com.example.projectfgc.move.moveAdapter
@@ -27,6 +29,7 @@ import kotlinx.android.synthetic.main.char_layout.view.*
 class characterActivity : AppCompatActivity(){
 
     lateinit var move_list: RecyclerView
+    lateinit var searchView: SearchView
     val displayMoveList: MutableList<priorityMoveFields> = ArrayList()
     val moveList: MutableList<priorityMoveFields> = ArrayList()
 
@@ -78,12 +81,14 @@ class characterActivity : AppCompatActivity(){
 
         menuInflater.inflate(R.menu.search_menu, menu)
         var searchItem = menu.findItem(R.id.app_bar_search)
-        var searchView = searchItem.actionView as SearchView
+        searchView = searchItem.actionView as SearchView
+        var simpleSearch = mutableListOf<String>()
 
         if(searchItem != null){
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
 
                 override fun onQueryTextSubmit(query: String?): Boolean {
+                    searchView.hideKeyboard()
                     return true
                 }
 
@@ -93,8 +98,36 @@ class characterActivity : AppCompatActivity(){
                         displayMoveList.clear()
 
                         val search = newText.toLowerCase()
+
+                        // this method only takes into consideration the simple method IF there is no / or + in the search
+                        if(search.contains("/") || search.contains("+") || search.contains(",")) {
+                        }else{
+                            simpleSearch = mutableListOf()
+                            for (s in search) {
+                                simpleSearch.add(s.toString())
+                            }
+                            //d("simplesearch", "$simpleSearch")
+                            moveList.forEach {
+                                if (sSearch(simpleSearch, it)) {
+                                    displayMoveList.add(it)
+                                }
+                            }
+                        }
+
+//                        simpleSearch = mutableListOf()
+//                            for (s in search) {
+//                                simpleSearch.add(s.toString())
+//                            }
+//                            //d("simplesearch", "$simpleSearch")
+//                            moveList.forEach {
+//                                if (sSearch(simpleSearch, it)) {
+//                                    displayMoveList.add(it)
+//                                }
+//                            }
+
                         moveList.forEach{
-                            if(it.moveName.toLowerCase().contains(search) || it.moveInput.toLowerCase().contains(search)){
+                            val input = it.moveInput.replace(" ", "")
+                            if(it.moveName.toLowerCase().contains(search) || it.moveInput.toLowerCase().contains(search) || input.toLowerCase().contains(search)){
                                 displayMoveList.add(it)
                             }
                         }
@@ -111,7 +144,7 @@ class characterActivity : AppCompatActivity(){
             })
         }
 
-        searchView.setOnQueryTextFocusChangeListener { view, hasFocus ->
+        searchView.setOnQueryTextFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 searchView.showKeyboard()
             }
@@ -137,4 +170,12 @@ class characterActivity : AppCompatActivity(){
         return super.onCreateOptionsMenu(menu)
     }
 
+    fun sSearch(search: MutableList<String>, move: priorityMoveFields): Boolean{
+        for(s in search){
+            if(!move.moveInput.toLowerCase().contains(s)){
+                return false
+            }
+        }
+        return true
+    }
 }

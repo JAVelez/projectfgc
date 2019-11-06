@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
+import com.example.projectfgc.character.hideKeyboard
 import com.example.projectfgc.data.characterFields
 import kotlinx.android.synthetic.main.char_layout.view.*
 import com.example.projectfgc.data.createData
@@ -39,6 +40,7 @@ class punishCharacterAdapter(val characterList: MutableList<characterFields>, va
             intent.putExtra("character", char)
             intent.putExtra("move", move)
 
+            holder.view.hideKeyboard()
             holder.view.context.startActivity(intent)
         }
 

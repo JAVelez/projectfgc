@@ -6,6 +6,7 @@ import android.view.*
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
+import com.example.projectfgc.character.hideKeyboard
 import com.example.projectfgc.data.createData
 import com.example.projectfgc.data.priorityMoveFields
 import com.example.projectfgc.punish.punishMainActivity
@@ -40,6 +41,7 @@ class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : Recy
         holder.view.detailButton.setOnClickListener {
             val intent = Intent(holder.view.context, moveActivity::class.java)
             intent.putExtra("move", move)
+            holder.view.hideKeyboard()
             holder.view.context.startActivity(intent)
         }
 
@@ -49,6 +51,7 @@ class moveAdapter(val moveList: List<priorityMoveFields>, val state: Int) : Recy
                 if (move.onBlock <= -10) {
                     val intent = Intent(holder.view.context, punishMainActivity::class.java)
                     intent.putExtra("move", move)
+                    holder.view.hideKeyboard()
                     holder.view.context.startActivity(intent)
                 } else {
                     var response = createData.getRecommendation(move)

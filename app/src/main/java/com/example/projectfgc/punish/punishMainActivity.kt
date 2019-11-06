@@ -59,8 +59,7 @@ class punishMainActivity : AppCompatActivity() {
         view.stickyMovesDmg.text = move.totalDmg.toString()
 
         punishCharRecView.layoutManager = LinearLayoutManager( this@punishMainActivity)
-        punishCharRecView.adapter =
-            punishCharacterAdapter(displayCharacterList, move)
+        punishCharRecView.adapter = punishCharacterAdapter(displayCharacterList, move)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -73,6 +72,7 @@ class punishMainActivity : AppCompatActivity() {
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
 
                 override fun onQueryTextSubmit(query: String?): Boolean {
+                    searchView.hideKeyboard()
                     return true
                 }
 

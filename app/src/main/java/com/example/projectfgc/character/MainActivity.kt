@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
 
                 override fun onQueryTextSubmit(query: String?): Boolean {
+                    searchView.hideKeyboard()
                     return true
                 }
 

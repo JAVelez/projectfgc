@@ -3,14 +3,17 @@
     <string name="action_settings">Settings</string>
     <string name="c">CRUMPLE</string>
     <string name="k">KND</string>
+    <string name="kstb">KND + STB</string>
     <string name="la">LAUNCH</string>
+    <string name="lastb">LAUNCH + STB</string>
+
     <string name="ls">SCREW</string>
     <string name="l">l</string>
     <string name="lg">low grounded</string>
     <string name="m">m</string>
     <string name="mg">mid grounded</string>
     <string name="h">h</string>
-    <string name="hj">h</string>
+    <string name="hj">h (not duckable)</string>
     <string name="hg">high grounded</string>
     <string name="s">special</string>
     <string name="vts">(VTS)</string>
