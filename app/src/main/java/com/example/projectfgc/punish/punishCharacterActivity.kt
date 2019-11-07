@@ -80,7 +80,7 @@ class punishCharacterActivity : AppCompatActivity(){
                 //  Cover low cases
                 if (move.hitProperty.get(move.hitProperty.size - 1) == "l") {   //this will not consider cancels after lows or sway after a low and will display standing punishes
                     //d("low", "${m.crouch} ${m.moveInput}")
-                    if(m.crouch) {
+                    if(m.crouch || m.moveInput.substring(0,1).toLowerCase() == "u") {
                         if (m.speed <= abs(move.onBlock) && m.natural && m.range >= move.pushback) {
                             punishers.add(m)
                         }
