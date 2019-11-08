@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.content_punish_character_screen.*
 import kotlinx.android.synthetic.main.content_character_screen.view.*
 import kotlinx.android.synthetic.main.char_layout.view.*
 import kotlinx.android.synthetic.main.moves_layout.view.*
+import kotlinx.android.synthetic.main.sub_content_character_screen.view.*
 import java.lang.Math.abs
 
 class punishCharacterActivity : AppCompatActivity(){
@@ -102,7 +103,7 @@ class punishCharacterActivity : AppCompatActivity(){
         //  Could be more efficient if we pass a comparator that sorts the list in reverse
         punishers.sortBy { it.priority }
         punishers.reverse()
-        punishLayout.movesRecView.apply{
+        punishLayout.subContentCharacterActivity.movesRecView.apply{
             layoutManager = LinearLayoutManager( this@punishCharacterActivity)
             adapter = moveAdapter(punishers, 1)
             val divItemDecor = DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL)

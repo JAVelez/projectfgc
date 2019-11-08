@@ -2,24 +2,18 @@ package com.example.projectfgc.character
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log.d
-import android.view.GestureDetector
 import android.view.Menu
 import android.view.MenuItem
-import android.view.MotionEvent
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.view.GestureDetectorCompat
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
-import com.example.projectfgc.data.c
 import com.example.projectfgc.data.characterFields
 import com.example.projectfgc.data.priorityMoveFields
+import com.example.projectfgc.general.generalCharacterActivity
 import com.example.projectfgc.move.moveAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.app_bar_layout.*
@@ -73,10 +67,10 @@ class characterActivity : AppCompatActivity(){
         val view = findViewById<ConstraintLayout>(R.id.charBanner)
         view.charName.text = character.name
         view.charImage.setImageDrawable(getDrawable(character.imageName))
-        view.charImage.setOnClickListener {
-            val intent = Intent(view.context, generalCharacterActivity::class.java)
-            //intent.putExtra("character", char)
-            view.context.startActivity(intent)
+        charBannerClickable.setOnClickListener {
+            val intent = Intent(this, generalCharacterActivity::class.java)
+            intent.putExtra("character", character)
+            this.startActivity(intent)
         }
 
         return character
