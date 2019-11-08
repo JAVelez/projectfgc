@@ -33,7 +33,6 @@ class characterActivity : AppCompatActivity(){
     val displayMoveList: MutableList<priorityMoveFields> = ArrayList()
     val moveList: MutableList<priorityMoveFields> = ArrayList()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -171,9 +170,32 @@ class characterActivity : AppCompatActivity(){
     }
 
     fun sSearch(search: MutableList<String>, move: priorityMoveFields): Boolean{
+        var index = mutableListOf<Int>()
+        var substring = 0
         for(s in search){
             if(!move.moveInput.toLowerCase().contains(s)){
                 return false
+            }
+            index.add(move.moveInput.substring(substring).toLowerCase().indexOf(s))
+            substring = index.last() + 1
+        }
+        var i = 0
+
+        if(move.moveInput.toLowerCase().contains("or")) {
+            while (i < index.size - 1) {
+                if (index[i] > index[i + 1]) {
+                    return false
+                }
+                i++
+            }
+            return true
+        }else{
+            i = 0
+            while (i < index.size - 1) {
+                if (index[i] > index[i + 1] || index[i+1] - index[i] > 3) {
+                    return false
+                }
+                i++
             }
         }
         return true
