@@ -20,22 +20,24 @@
         <item name="textColor">@color/colorText</item>
         <item name="tintColor">@color/colorText</item>
         <item name="buttonColor">@color/colorPrimary</item>
-
-
+        <item name="android:colorEdgeEffect">@android:color/white</item>
     </style>
+
 
     <style name="appBar" parent="AppTheme.AppBarOverlay">
         <item name="android:colorControlActivated">@color/colorBigText</item>
         <item name="android:textColorPrimary">@color/colorSubText</item>
-
     </style>
+
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 

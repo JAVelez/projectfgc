@@ -73,6 +73,12 @@ class characterActivity : AppCompatActivity(){
         val view = findViewById<ConstraintLayout>(R.id.charBanner)
         view.charName.text = character.name
         view.charImage.setImageDrawable(getDrawable(character.imageName))
+        view.charImage.setOnClickListener {
+            val intent = Intent(view.context, generalCharacterActivity::class.java)
+            //intent.putExtra("character", char)
+            view.context.startActivity(intent)
+        }
+
         return character
     }
 

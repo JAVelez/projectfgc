@@ -392,7 +392,6 @@ object createData {
         return result
     }
 
-
     //from drive
     fun getDragunovMovesList(): MutableList<priorityMoveFields>{
         var result = mutableListOf<priorityMoveFields>()

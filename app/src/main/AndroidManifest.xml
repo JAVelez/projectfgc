@@ -23,6 +23,7 @@
         <activity android:name="com.example.projectfgc.move.moveActivity" />
         <activity android:name="com.example.projectfgc.punish.punishMainActivity" />
         <activity android:name="com.example.projectfgc.punish.punishCharacterActivity" />
+        <activity android:name=".character.generalCharacterActivity" />
     </application>
 
 </manifest>
