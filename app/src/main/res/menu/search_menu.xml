@@ -9,5 +9,13 @@
         android:title="Search"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/app_bar_filter"
+        android:icon="@drawable/ic_filter_list_black_24dp"
+        android:iconTint="@color/colorBigText"
+        android:title="filter"
+        android:visible="true"
+        app:actionViewClass="androidx.appcompat.view.menu.ExpandedMenuView"
+        app:showAsAction="always|collapseActionView" />
 
 </menu>

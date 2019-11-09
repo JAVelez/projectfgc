@@ -2106,5 +2106,30 @@ object createData {
         return "last"
     }
 
+    fun filterCore(ml: MutableList<priorityMoveFields>): MutableList<priorityMoveFields>{
+        var coreMoves = mutableListOf<priorityMoveFields>()
+        for (m in ml){
+            if(m.core){
+                coreMoves.add(m)
+            }
+        }
+        return coreMoves
+    }
+
+    fun sortMovesList(ml: MutableList<priorityMoveFields>): MutableList<priorityMoveFields>{
+        val ic = inputComparator()
+        ml.sortWith(ic)
+        return ml
+    }
+
+    class inputComparator: Comparator<priorityMoveFields>{
+        override fun compare(o1: priorityMoveFields?, o2: priorityMoveFields?): Int {
+            if(o1 == null || o2 == null){
+                return 0
+            }
+            return o1.moveInput.compareTo(o2.moveInput)
+        }
+    }
+
 
 }

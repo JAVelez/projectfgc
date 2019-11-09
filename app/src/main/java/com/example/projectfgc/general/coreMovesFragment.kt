@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
 import com.example.projectfgc.data.characterFields
+import com.example.projectfgc.data.createData
 import com.example.projectfgc.data.priorityMoveFields
 import com.example.projectfgc.move.moveAdapter
 
@@ -29,12 +30,7 @@ class coreMovesFragment: Fragment() {
         val recview: RecyclerView = v.findViewById(R.id.movesRecView)
 
         // filter out the character's core moves
-        var coreMoves = mutableListOf<priorityMoveFields>()
-        for (m in character.moveList){
-            if(m.core){
-                coreMoves.add(m)
-            }
-        }
+        var coreMoves = createData.filterCore(character.moveList)
 
         // call the movesAdapter to display the moves in its recyclerview
         recview.apply {

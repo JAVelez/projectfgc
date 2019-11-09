@@ -39,6 +39,7 @@ class characterActivity : AppCompatActivity(){
             startActivity(intent)
         }
 
+
         helpSnackBar()
 
         val character: characterFields = setCharBanner()
