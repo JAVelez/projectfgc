@@ -2,11 +2,15 @@ package com.example.projectfgc.character
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log.d
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SearchView
+import android.widget.Toast
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.children
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -38,7 +42,6 @@ class characterActivity : AppCompatActivity(){
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
-
 
         helpSnackBar()
 
@@ -79,7 +82,46 @@ class characterActivity : AppCompatActivity(){
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
 
-        menuInflater.inflate(R.menu.search_menu, menu)
+        menuInflater.inflate(R.menu.search_filter_menu, menu)
+        val reset = menu.findItem(R.id.reset)
+        reset.setOnMenuItemClickListener {
+            Toast.makeText(this@characterActivity, reset.title, Toast.LENGTH_SHORT).show()
+            true
+        }
+        val launcher = menu.findItem(R.id.launcher)
+        launcher.setOnMenuItemClickListener {
+            Toast.makeText(this@characterActivity, launcher.title, Toast.LENGTH_SHORT).show()
+            true
+        }
+        val knd = menu.findItem(R.id.knd)
+        knd.setOnMenuItemClickListener {
+            Toast.makeText(this@characterActivity, knd.title, Toast.LENGTH_SHORT).show()
+            true
+        }
+        val low = menu.findItem(R.id.lows)
+        low.setOnMenuItemClickListener {
+            Toast.makeText(this@characterActivity, low.title, Toast.LENGTH_SHORT).show()
+            true
+        }
+        val homing = menu.findItem(R.id.homing)
+        homing.setOnMenuItemClickListener {
+            Toast.makeText(this@characterActivity, homing.title, Toast.LENGTH_SHORT).show()
+            true
+        }
+        val plusOnBlock = menu.findItem(R.id.plus)
+        plusOnBlock.setOnMenuItemClickListener {
+            Toast.makeText(this@characterActivity, plusOnBlock.title, Toast.LENGTH_SHORT).show()
+            true
+        }
+        val punishable = menu.findItem(R.id.punishable)
+        punishable.setOnMenuItemClickListener {
+            Toast.makeText(this@characterActivity, punishable.title, Toast.LENGTH_SHORT).show()
+            true
+        }
+
+
+
+
         var searchItem = menu.findItem(R.id.app_bar_search)
         searchView = searchItem.actionView as SearchView
         var simpleSearch = mutableListOf<String>()

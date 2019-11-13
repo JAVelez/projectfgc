@@ -21,6 +21,8 @@
         <item name="tintColor">@color/colorText</item>
         <item name="buttonColor">@color/colorPrimary</item>
         <item name="android:colorEdgeEffect">@android:color/white</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
     </style>
 
 
@@ -35,6 +37,19 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+<!--    this changes the ... to a filter icon   in search_filter_menu-->
+    <style name="MyActionButtonOverflow" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_filter_list_black_24dp</item>
+        <item name="android:background">?android:attr/actionBarItemBackground</item>
+        <item name="android:contentDescription">"Filter"</item>
+    </style>
+
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:windowDisablePreview">true</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">5.0dp</item>
+        <!--<item name="android:popupBackground">#FFF</item>-->
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

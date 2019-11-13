@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <item
+        android:id="@+id/reset"
+        android:title="All moves"/>
+    <item
+        android:id="@+id/launcher"
+        android:title="Launchers"/>
+    <item
+        android:id="@+id/knd"
+        android:title="Knockdowns"/>
+    <item
+        android:id="@+id/lows"
+        android:title="Lows"/>
+    <item
+        android:id="@+id/homing"
+        android:title="Homing"/>
+    <item
+        android:id="@+id/plus"
+        android:title="+ On Block"/>
+    <item
+        android:id="@+id/punishable"
+        android:title="Punishable"/>
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/ic_search_green_24dp"
+        android:iconTint="@color/colorBigText"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always|collapseActionView" />
+
+</menu>
