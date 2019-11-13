@@ -2,36 +2,33 @@ package com.example.projectfgc.data
 
 import com.example.projectfgc.R
 
-val c: String = "CRUMPLE"
-val k: String = "KND"
-val kstb: String = "KND + STB"
-val la: String = "LAUNCH"
-val lastb: String = "LAUNCH + STB"
-val ls: String = "SCREW"
-val l: String = "l"
-val lg: String = "low grounded" //  low attack that finishes grounded
-val m: String = "m"
-val mg: String = "mid grounded" //  mid attack that finishes grounded
-val mub: String = "m!"
-val h: String = "h"
-val hj: String = "h (not duckable)" // high jailed
-val hg: String = "high grounded"
-val hub: String = "h!"
-val ht: String = "h"
-val s: String = "special"
-val cr: String = "crouching"
-val cd: String = "crouch dash"
-val ssr: String = "Sidestep Right"
-val ssl: String = "Sidestep Left"
-val ssx: String = "Cannot Sidestep"
-val tr: String = "Tracks Right"
-val tl: String = "Tracks Left"
-val tn: String = "Doesn't Track"
-val tb: String = "Tracks Both"
-
-
-
 object createData {
+    val c: String = "CRUMPLE"
+    val k: String = "KND"
+    val kstb: String = "KND + STB"
+    val la: String = "LAUNCH"
+    val lastb: String = "LAUNCH + STB"
+    val ls: String = "SCREW"
+    val l: String = "l"
+    val lg: String = "low grounded" //  low attack that finishes grounded
+    val m: String = "m"
+    val mg: String = "mid grounded" //  mid attack that finishes grounded
+    val mub: String = "m!"
+    val h: String = "h"
+    val hj: String = "h (not duckable)" // high jailed
+    val hg: String = "high grounded"
+    val hub: String = "h!"
+    val ht: String = "h"
+    val s: String = "special"
+    val cr: String = "crouching"
+    val cd: String = "crouch dash"
+    val ssr: String = "Sidestep Right"
+    val ssl: String = "Sidestep Left"
+    val ssx: String = "Cannot Sidestep"
+    val tr: String = "Tracks Right"
+    val tl: String = "Tracks Left"
+    val tn: String = "Doesn't Track"
+    val tb: String = "Tracks Both"
 
 
     fun initCharacters(): MutableList<characterFields> {

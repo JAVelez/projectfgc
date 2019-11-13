@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectfgc.R
 import com.example.projectfgc.data.characterFields
+import com.example.projectfgc.data.createData
 import com.example.projectfgc.data.priorityMoveFields
 import com.example.projectfgc.general.generalCharacterActivity
 import com.example.projectfgc.move.moveAdapter
@@ -86,40 +87,97 @@ class characterActivity : AppCompatActivity(){
         val reset = menu.findItem(R.id.reset)
         reset.setOnMenuItemClickListener {
             Toast.makeText(this@characterActivity, reset.title, Toast.LENGTH_SHORT).show()
+            displayMoveList.clear()
+            displayMoveList.addAll(moveList)
+            move_list.adapter?.notifyDataSetChanged()
             true
         }
+
+        // Filter launchers
         val launcher = menu.findItem(R.id.launcher)
         launcher.setOnMenuItemClickListener {
-            Toast.makeText(this@characterActivity, launcher.title, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@characterActivity, "Launchers on hit or on counterhit", Toast.LENGTH_SHORT).show()
+            displayMoveList.clear()
+            for(m in moveList){
+                if(m.onHit == createData.la || m.onHit == createData.ls || m.onHit == createData.lastb
+                    || m.onCounterHit == createData.la || m.onCounterHit == createData.ls || m.onCounterHit == createData.lastb){
+                    displayMoveList.add(m)
+                }
+            }
+            move_list.adapter?.notifyDataSetChanged()
             true
         }
+        // Filter knockdown moves
         val knd = menu.findItem(R.id.knd)
         knd.setOnMenuItemClickListener {
-            Toast.makeText(this@characterActivity, knd.title, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@characterActivity, "Knockdown on hit or on counterhit", Toast.LENGTH_SHORT).show()
+            displayMoveList.clear()
+            for(m in moveList){
+                if(m.onHit == createData.k || m.onHit == createData.kstb
+                    || m.onCounterHit == createData.k || m.onCounterHit == createData.kstb){
+                    displayMoveList.add(m)
+                }
+            }
+            move_list.adapter?.notifyDataSetChanged()
             true
         }
+//        // Filter single low moves
+//        val low = menu.findItem(R.id.lows)
+//        low.setOnMenuItemClickListener {
+//            Toast.makeText(this@characterActivity, low.title, Toast.LENGTH_SHORT).show()
+//            displayMoveList.clear()
+//            for(m in moveList){
+//                if(m.hitProperty.indexOf(createData.l) == 0){
+//                    displayMoveList.add(m)
+//                }
+//            }
+//            move_list.adapter?.notifyDataSetChanged()
+//            true
+//        }
+        // Filter strings that contain lows in them
         val low = menu.findItem(R.id.lows)
         low.setOnMenuItemClickListener {
             Toast.makeText(this@characterActivity, low.title, Toast.LENGTH_SHORT).show()
+            displayMoveList.clear()
+            for(m in moveList){
+                if(m.hitProperty.contains(createData.l)){
+                    displayMoveList.add(m)
+                }
+            }
+            move_list.adapter?.notifyDataSetChanged()
             true
         }
-        val homing = menu.findItem(R.id.homing)
-        homing.setOnMenuItemClickListener {
-            Toast.makeText(this@characterActivity, homing.title, Toast.LENGTH_SHORT).show()
-            true
-        }
+//        val homing = menu.findItem(R.id.homing)
+//        homing.setOnMenuItemClickListener {
+//            Toast.makeText(this@characterActivity, homing.title, Toast.LENGTH_SHORT).show()
+//            true
+//        }
+        // Filter + on block moves
         val plusOnBlock = menu.findItem(R.id.plus)
         plusOnBlock.setOnMenuItemClickListener {
             Toast.makeText(this@characterActivity, plusOnBlock.title, Toast.LENGTH_SHORT).show()
+            displayMoveList.clear()
+            for(m in moveList){
+                if(m.onBlock > 0){
+                    displayMoveList.add(m)
+                }
+            }
+            move_list.adapter?.notifyDataSetChanged()
             true
         }
+        // Filter punishable moves (-10 or more)
         val punishable = menu.findItem(R.id.punishable)
         punishable.setOnMenuItemClickListener {
-            Toast.makeText(this@characterActivity, punishable.title, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@characterActivity, "Punishable Strings", Toast.LENGTH_SHORT).show()
+            displayMoveList.clear()
+            for(m in moveList){
+                if(m.onBlock <= -10){
+                    displayMoveList.add(m)
+                }
+            }
+            move_list.adapter?.notifyDataSetChanged()
             true
         }
-
-
 
 
         var searchItem = menu.findItem(R.id.app_bar_search)
