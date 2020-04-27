@@ -44,4 +44,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/charImage" />
 
+    <ImageButton
+        android:id="@+id/favBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#00FFFFFF"
+        android:backgroundTintMode="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/charName"
+        app:layout_constraintTop_toTopOf="@+id/charName"
+        app:srcCompat="@drawable/ic_favorite_border_24dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

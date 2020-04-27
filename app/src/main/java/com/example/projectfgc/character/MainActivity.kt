@@ -26,12 +26,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        // Init toolbar
         toolbar.setTitle("")
         setSupportActionBar(toolbar)
 
+        // Init sharedPreferences
+        val pref = applicationContext.getSharedPreferences("MyPref", 0) // 0 - for private mode
+        val editor = pref.edit()
+
         charactersList.addAll(initCharacters())
         displayCharacterList.addAll(charactersList)
-
 
         character_list = findViewById(R.id.charRecView) as RecyclerView
         charRecView.apply {
